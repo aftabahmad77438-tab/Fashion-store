@@ -1,0 +1,85 @@
+.addnew-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+}
+
+.addnew-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 500px;
+}
+
+.addnew-item p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.addnew-item input,
+.addnew-item select {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.addnew-item input:focus,
+.addnew-item select:focus {
+  border-color: #333;
+}
+.btn {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  width: fit-content;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background: #111;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  background: #999;
+  cursor: not-allowed;
+}.addnew-thumbnail-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px dashed #ccc;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .addnew-page {
+    padding: 24px;
+    gap: 18px;
+  }
+
+  .addnew-item {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .addnew-page {
+    padding: 16px;
+    padding-bottom: 90px; /* clears the fixed bottom sidebar on mobile */
+  }
+}

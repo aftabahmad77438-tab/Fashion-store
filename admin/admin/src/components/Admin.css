@@ -1,0 +1,10 @@
+.admin {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-routes {
+  flex: 1;
+  background: #fafafa;
+  min-height: 100vh;
+}

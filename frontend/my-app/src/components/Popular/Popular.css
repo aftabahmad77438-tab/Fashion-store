@@ -1,0 +1,28 @@
+.one{
+    height: 100vh;
+}
+
+
+.h1{
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 50px;
+}
+.popular{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+@media (max-width: 480px) {
+
+
+    .one{
+        height: 90vh;
+    }
+
+
+}

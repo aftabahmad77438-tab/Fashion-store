@@ -1,0 +1,9 @@
+/* body{
+    max-width: 100%;
+    overflow: hidden;
+} */
+ button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+ }

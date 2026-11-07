@@ -1,0 +1,76 @@
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(180deg,#fde1ff,#e1ffea22 60%);
+    height: 100vh;
+    max-width: 100%;
+    overflow: hidden;
+}
+.p{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+h1{
+    font-size: 3.5rem;
+} 
+.btn{
+ border: 1px solid black;
+ border-radius: 20px;
+ background-color: rgb(221, 39, 39);
+ color: white;
+ margin-top: 2rem;
+ font-weight: 500;
+}
+.right img{
+    width: 23rem;
+    /* height: 28rem; */
+    height: auto;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .right img {
+        width: 18rem;
+        height: 22rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .p {
+        font-size: 1rem;
+    }
+
+    .hand img {
+        width: 2rem;
+        height: 2rem;
+        margin: 0.6rem;
+    }
+
+    .right img {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,60 @@
+.banner{
+    width: 80%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.fortext{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fortext p{
+    color: rgb(10, 0, 0);
+    font-weight: 600;
+}
+.fortext .but{
+    background-color: rgb(239, 110, 55);
+    border-radius: 30px;
+    padding: 8px;
+
+
+    /* color: white; */
+}
+.allcategory{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 5px;
+    justify-items: center;
+    align-items: center;
+
+}
+.shopcategory{
+    margin-bottom: 110px;
+}
+
+@media (max-width:480px){
+
+
+        .allcategory{
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 5px;
+        }
+       .fortext{
+        display: flex;
+        flex-direction: column;
+       }
+
+
+
+
+
+
+}
