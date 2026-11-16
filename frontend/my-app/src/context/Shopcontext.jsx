@@ -2,47 +2,44 @@ import React, { createContext, useEffect, useState } from "react";
 
 export const shopcontext = createContext(null);
 
+const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 const Shopcontextprovider = (props) => {
 
   const [all_product, setall_product] = useState([]);
   const [cartitems, setcartitems] = useState({});
 
+  useEffect(() => {
+    const token = localStorage.getItem('auth-token')
+    if (token) {
+      fetch(`${API}/getcart`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'auth-token': token,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => setcartitems(data))
+    }
+  }, [])
 
   useEffect(() => {
-  const token = localStorage.getItem('auth-token')
-  if (token) {
-    fetch('http://localhost:4000/getcart', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'auth-token': token,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => setcartitems(data))
-  }
-}, [])
-
-
-
-useEffect(() => {
-  const token = localStorage.getItem('auth-token')
-  if (token) {
-    fetch('http://localhost:4000/updatecart', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'auth-token': token,
-      },
-      body: JSON.stringify({ cartitems }),
-    })
-  }
-}, [cartitems])
-
-
+    const token = localStorage.getItem('auth-token')
+    if (token) {
+      fetch(`${API}/updatecart`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'auth-token': token,
+        },
+        body: JSON.stringify({ cartitems }),
+      })
+    }
+  }, [cartitems])
 
   useEffect(() => {
-    fetch('http://localhost:4000/allproduct')
+    fetch(`${API}/allproduct`)
       .then((res) => res.json())
       .then((data) => {
         console.log('fetched:', data)
