@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 import './Login.css';
 
 const Loginsignup = () => {
@@ -18,7 +20,7 @@ const Loginsignup = () => {
 
 
   const login = async () => {
-  let responseData = await fetch('http://localhost:4000/login', {
+  let responseData = await fetch(`${API}/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(formdata),
@@ -33,7 +35,7 @@ const Loginsignup = () => {
 }
 
 const signup = async () => {
-  let responseData = await fetch('http://localhost:4000/signup', {
+  let responseData = await fetch(`${API}/signup`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(formdata),
