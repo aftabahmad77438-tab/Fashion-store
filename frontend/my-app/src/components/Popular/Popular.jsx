@@ -1,5 +1,7 @@
 import React from 'react'
 // import data_product from '../assets/data'
+const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 import './Popular.css'
 import Item from '../item/Item'
 import { useState,useEffect } from 'react'
@@ -7,12 +9,12 @@ import { useState,useEffect } from 'react'
 const Popular = () => {
 
   const [data_product, setdata_product] = useState([]);
-  
-      useEffect(() => {
-          fetch('http://localhost:4000/popularinwomen')
-              .then((res) => res.json())
-              .then((data) => setdata_product(data))
-      }, [])
+
+useEffect(() => {
+  fetch(`${API}/popularinwomen`)
+    .then((res) => res.json())
+    .then((data) => setdata_product(data))
+}, [])
 
   return (
     <div className='one'>
