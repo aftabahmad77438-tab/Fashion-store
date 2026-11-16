@@ -5,7 +5,7 @@ const path = require('path')
 const port = process.env.PORT || 4000
 
 const storage = multer.diskStorage({
-  destination: './upload/images',
+  destination: process.env.VERCEL ? '/tmp' : './upload/images',
   filename: (req, file, cb) => {
     return cb(
       null,
