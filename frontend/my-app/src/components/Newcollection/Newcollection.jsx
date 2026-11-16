@@ -1,16 +1,21 @@
+
 import React, { useEffect, useState } from 'react'
+const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 import './Newcollection.css'
 import Item from '../item/Item'
+
 // import new_collections from '../assets/new_collections'
 
 
+
 const Newcollection = () => {
-  const [newcollection,setnewcollection]=useState([]);
+  const [newcollection, setnewcollection] = useState([]);
   useEffect(() => {
-            fetch('http://localhost:4000/newcollections')
-                .then((res) => res.json())
-                .then((data) => setnewcollection(data))
-        }, [])
+    fetch(`${API}/newcollections`)
+      .then((res) => res.json())
+      .then((data) => setnewcollection(data))
+  }, [])
   return (
     <div className='newcollection'>
       
