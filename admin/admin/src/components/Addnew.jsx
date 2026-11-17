@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './Addnew.css'
 import upload_icon from '../assets/upload_icon.jpg'
+const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 
 const Addnew = () => {
   const [product, setProduct] = useState({
@@ -28,7 +30,7 @@ const addbtn = async () => {
     let formData = new FormData()
     formData.append('product', image)
 
-    const uploadRes = await fetch('http://localhost:4000/upload', {
+const uploadRes = await fetch(`${API}/upload`, {
       method: 'POST',
       body: formData,
     }).then((res) => res.json())
@@ -40,7 +42,7 @@ const addbtn = async () => {
 
   console.log(productObj)
 
-  const addRes = await fetch('http://localhost:4000/addproduct', {
+  const addRes = await fetch(`${API}/addproduct`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(productObj),
