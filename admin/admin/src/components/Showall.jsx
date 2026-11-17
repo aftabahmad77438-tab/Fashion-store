@@ -75,7 +75,7 @@ const Showall = () => {
     const [allproduct, setAllProduct] = useState([])
 
 const fetchInfo = async () => {
-const uploadRes = await fetch(`${API}/allproduct`, {
+  await fetch(`${API}/allproduct`)
     .then((res) => res.json())
     .then((data) => setAllProduct(data))
 }
