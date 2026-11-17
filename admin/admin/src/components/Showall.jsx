@@ -2,11 +2,12 @@ import React from 'react'
 import './Showall.css'
 import cross from '../assets/cross.png'
 import  { useState, useEffect } from 'react'
+export const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
 const Showall = () => {
     const [allproduct, setAllProduct] = useState([])
 
 const fetchInfo = async () => {
-  await fetch('http://localhost:4000/allproduct')
+const uploadRes = await fetch(`${API}/allproduct`, {
     .then((res) => res.json())
     .then((data) => setAllProduct(data))
 }
