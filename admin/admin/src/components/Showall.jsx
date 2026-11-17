@@ -19,7 +19,7 @@ useEffect(() => {
 const removebtn = async (id) => {
   console.log(id)
 
-  await fetch('http://localhost:4000/removeproduct', {
+  await fetch(`${API}/removeproduct`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ _id: id }),
