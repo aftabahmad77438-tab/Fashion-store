@@ -3,6 +3,7 @@ import './Showall.css'
 import cross from '../assets/cross.png'
 import { useState, useEffect } from 'react'
 const API = import.meta.env.VITE_API_URL || "http://localhost:4000";
+console.log("API =", API)
 const Showall = () => {
   const [allproduct, setAllProduct] = useState([])
 
